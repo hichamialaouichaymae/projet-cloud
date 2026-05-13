@@ -1,0 +1,16 @@
+global:
+  scrape_interval: 5s        # Fréquence de scrapping
+  evaluation_interval: 5s    # Fréquence d'évaluation des règles
+
+scrape_configs:
+  # Scrapping du dashboard Flask
+  - job_name: "flask_app_metrics"
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["flask-app:5000"]
+
+  # Scrapping de LocalStack (optionnel si tu actives des métriques)
+  - job_name: "localstack_metrics"
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["localstack:4566"]
