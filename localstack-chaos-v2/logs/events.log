@@ -1,0 +1,1268 @@
+2026-05-13T21:06:09.185413Z Instance i-33082536e7df300b5 → état running
+2026-05-13T21:06:09.187185Z Instance i-1485f3bdde071a6dc → état stopped
+2026-05-13T21:06:09.199866Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:06:09.218366Z Subnets actifs : subnet-ea29eafb, subnet-2239e0de, subnet-7f890f10, subnet-1ff2c06d, subnet-70a16e97, subnet-6938eafa, subnet-31c4464b
+2026-05-13T21:06:53.450370Z ⚠️ Subnet subnet-31c4464b introuvable → utilisation de subnet-3652e551
+2026-05-13T21:06:53.480186Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:06:53.481882Z ⚠️ Security Group sg-549879059aa3b6c9a introuvable → lancement sans SG
+2026-05-13T21:06:53.500689Z 🔄 Nouvelle instance i-d16c08ac67d0f840a recréée (recovery)
+2026-05-13T21:06:53.512820Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:07:03.673283Z Instance i-8b25c415a3ab3f383 → état running
+2026-05-13T21:07:03.674861Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:07:13.795284Z Instance i-8b25c415a3ab3f383 → état running
+2026-05-13T21:07:13.796843Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:07:22.353807Z Instance i-8b25c415a3ab3f383 → état running
+2026-05-13T21:07:22.355541Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:07:22.367708Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:07:22.386258Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:07:22.747699Z Instance i-8b25c415a3ab3f383 → état running
+2026-05-13T21:07:22.749490Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:07:32.849685Z Instance i-8b25c415a3ab3f383 → état running
+2026-05-13T21:07:32.851286Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:07:34.124013Z 🎯 [INJECT] Déclenchement : Arrêter une instance EC2 au hasard
+2026-05-13T21:07:34.156025Z 💥 [CHAOS] Instance i-8b25c415a3ab3f383 arrêtée (kill_instance)
+2026-05-13T21:07:36.182349Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:07:36.184043Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:07:42.960243Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:07:42.962126Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:07:51.137081Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:07:51.138682Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:07:51.150875Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:07:51.168997Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:07:51.845321Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:07:51.847133Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:08:01.958917Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:08:01.960654Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:08:12.101785Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:08:12.103569Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:08:20.034025Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:08:20.035749Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:08:20.048863Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:08:20.069898Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:08:21.034553Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:08:21.036362Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:08:31.136373Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:08:31.137955Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:08:40.036111Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:08:40.038013Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:08:48.828644Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:08:48.830430Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:08:48.843318Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:08:48.921706Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:08:50.154854Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:08:50.156568Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:09:00.256463Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:09:00.258141Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:09:09.208827Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:09:09.210525Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:09:17.721808Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:09:17.723551Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:09:17.736006Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:09:17.754299Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:09:19.309331Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:09:19.310972Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:09:29.412333Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:09:29.413915Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:09:38.377423Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:09:38.378989Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:09:46.580605Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:09:46.582316Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:09:46.596157Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:09:46.614775Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:09:48.487427Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:09:48.489558Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:09:58.658427Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:09:58.659942Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:10:07.545245Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:10:07.546785Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:10:15.451313Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:10:15.452886Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:10:15.465406Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:10:15.484936Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:10:17.658673Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:10:17.660600Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:10:27.836234Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:10:27.837913Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:10:36.707946Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:10:36.709603Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:10:44.311446Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:10:44.313253Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:10:44.325799Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:10:44.344729Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:10:46.831911Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:10:46.833658Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:10:56.992545Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:10:56.994161Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:11:05.838626Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:11:05.840441Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:11:13.148802Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:11:13.150578Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:11:13.162761Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:11:13.181991Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:11:15.934218Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:11:15.936094Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:11:26.129028Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:11:26.130680Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:11:35.026639Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:11:35.028353Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:11:42.075315Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:11:42.077049Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:11:42.089468Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:11:42.107004Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:11:45.193336Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:11:45.195017Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:11:55.320770Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:11:55.323162Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:12:04.146773Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:12:04.148437Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:12:10.867619Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:12:10.869841Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:12:10.882690Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:12:10.902011Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:12:14.313875Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:12:14.315765Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:12:24.423285Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:12:24.425170Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:12:33.302319Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:12:33.304084Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:12:39.721810Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:12:39.723690Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:12:39.736739Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:12:39.755420Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:12:43.478144Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:12:43.480135Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:12:53.585860Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:12:53.587684Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:13:02.457977Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:13:02.459631Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:13:08.555072Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:13:08.556913Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:13:08.569201Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:13:08.588146Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:13:12.641571Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:13:12.643445Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:13:22.749989Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:13:22.751729Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:13:31.713838Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:13:31.715530Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:13:37.444953Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:13:37.446827Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:13:37.459680Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:13:37.478745Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:13:41.835071Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:13:41.836698Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:13:51.940723Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:13:51.942422Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:14:00.873465Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:14:00.875144Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:14:06.279231Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:14:06.281140Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:14:06.295984Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:14:06.391571Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:14:10.993309Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:14:10.994936Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:14:21.105875Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:14:21.107728Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:14:30.030107Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:14:30.032054Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:14:35.155362Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:14:35.157164Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:14:35.170261Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:14:35.189815Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:14:40.142771Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:14:40.144510Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:14:50.251147Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:14:50.252847Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:14:59.169243Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:14:59.170951Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:15:03.964147Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:15:03.966055Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:15:03.978189Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:15:04.001111Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:15:09.265575Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:15:09.267372Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:15:19.421716Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:15:19.423327Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:15:28.303636Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:15:28.305430Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:15:32.835381Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:15:32.837122Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:15:32.849021Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:15:32.867298Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:15:38.411337Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:15:38.413164Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:15:48.593819Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:15:48.595596Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:15:57.454213Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:15:57.456068Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:16:01.695633Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:16:01.697277Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:16:01.709452Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:16:01.729392Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:16:07.546197Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:16:07.548065Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:16:17.724189Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:16:17.726227Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:16:26.607218Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:16:26.608910Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:16:30.554269Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:16:30.556051Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:16:30.568763Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:16:30.588452Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:16:36.720189Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:16:36.721948Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:16:46.910556Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:16:46.912144Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:16:55.784185Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:16:55.786044Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:16:59.423544Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:16:59.425306Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:16:59.436673Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:16:59.454773Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:17:05.949238Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:17:05.951090Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:17:16.057336Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:17:16.059312Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:17:24.908930Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:17:24.910675Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:17:28.238198Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:17:28.240537Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:17:28.257878Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:17:28.285639Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:17:35.084019Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:17:35.085759Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:17:45.184531Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:17:45.186219Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:17:54.044973Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:17:54.046643Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:17:57.088435Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:17:57.090189Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:17:57.102929Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:17:57.125790Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:18:04.214499Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:18:04.216385Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:18:14.324537Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:18:14.326247Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:18:23.187314Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:18:23.189074Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:18:25.903093Z Instance i-8b25c415a3ab3f383 → état stopped
+2026-05-13T21:18:25.904869Z Instance i-d16c08ac67d0f840a → état running
+2026-05-13T21:18:25.916455Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:18:25.934725Z Subnets actifs : subnet-3652e551, subnet-02a59048, subnet-b28e2cc8, subnet-3218d858, subnet-eb0503de, subnet-21ae0778, subnet-0d5e83f4
+2026-05-13T21:18:45.670575Z ⚠️ Subnet subnet-3218d858 introuvable → utilisation de subnet-73ad3eb0
+2026-05-13T21:18:45.718785Z ⚠️ Security Group sg-8688cb6322de25b94 introuvable → lancement sans SG
+2026-05-13T21:18:45.725994Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:18:45.735954Z 🔄 Nouvelle instance i-1c84431542ad7fc40 recréée (recovery)
+2026-05-13T21:18:45.749523Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:18:45.894582Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:18:55.917736Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:18:55.919348Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:18:55.992358Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:19:06.019774Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:19:06.021287Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:19:06.128401Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:19:14.508478Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:19:14.509934Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:19:14.521488Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:19:14.540605Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:19:14.881719Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:19:14.883423Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:19:14.957853Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:19:24.986937Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:19:24.988481Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:19:25.062013Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:19:35.104345Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:19:35.105913Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:19:35.258947Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:19:43.377257Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:19:43.379113Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:19:43.393312Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:19:43.412982Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:19:44.089587Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:19:44.091339Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:19:44.163408Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:19:54.199110Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:19:54.200987Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:19:54.353124Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:20:04.380014Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:20:04.381789Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:20:04.461535Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:20:12.165023Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:20:12.166885Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:20:12.180084Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:20:12.200805Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:20:13.211921Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:20:13.213767Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:20:13.287872Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:20:23.324272Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:20:23.325972Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:20:23.460838Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:20:33.488627Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:20:33.490378Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:20:33.565783Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:20:41.029089Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:20:41.030804Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:20:41.043738Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:20:41.124210Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:20:42.370191Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:20:42.372011Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:20:42.446496Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:20:52.477170Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:20:52.478922Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:20:52.622517Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:21:02.662944Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:21:02.664622Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:21:02.737349Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:21:09.861630Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:21:09.863601Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:21:09.876104Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:21:09.894916Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:21:11.484590Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:21:11.486305Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:21:11.561539Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:21:21.592289Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:21:21.593988Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:21:21.740485Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:21:31.764822Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:21:31.766529Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:21:31.838685Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:21:38.712310Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:21:38.714016Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:21:38.726528Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:21:38.745237Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:21:40.608184Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:21:40.609997Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:21:40.733524Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:21:50.766772Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:21:50.768575Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:21:50.843347Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:22:00.874278Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:22:00.876050Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:22:00.948299Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:22:07.526799Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:22:07.528412Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:22:07.540243Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:22:07.559574Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:22:09.711207Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:22:09.712865Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:22:09.854081Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:22:19.887317Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:22:19.889008Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:22:19.958083Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:22:29.987216Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:22:29.988862Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:22:30.059697Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:22:36.354874Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:22:36.357044Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:22:36.368922Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:22:36.386547Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:22:38.853651Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:22:38.855284Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:22:38.995144Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:22:49.025057Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:22:49.026467Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:22:49.097579Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:22:59.124548Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:22:59.126137Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:22:59.198157Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:23:05.198410Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:23:05.200066Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:23:05.211927Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:23:05.230439Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:23:08.011235Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:23:08.012868Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:23:08.153313Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:23:18.187108Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:23:18.188712Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:23:18.262942Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:23:28.296999Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:23:28.298770Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:23:28.437919Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:23:34.031764Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:23:34.033586Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:23:34.047098Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:23:34.066445Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:23:37.190473Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:23:37.192375Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:23:37.267575Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:23:47.302240Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:23:47.303937Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:23:47.377326Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:23:57.416402Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:23:57.418143Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:23:57.573434Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:24:02.848230Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:24:02.849945Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:24:02.864553Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:24:02.885889Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:24:06.336774Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:24:06.338435Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:24:06.408375Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:24:16.432290Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:24:16.434325Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:24:16.510582Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:24:26.539377Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:24:26.540999Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:24:26.687960Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:24:31.650283Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:24:31.652104Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:24:31.666966Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:24:31.686320Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:24:35.422073Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:24:35.423952Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:24:35.499303Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:24:45.531377Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:24:45.533005Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:24:45.602183Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:24:55.636734Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:24:55.638427Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:24:55.799764Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:25:00.531996Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:25:00.533745Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:25:00.547489Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:25:00.567972Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:25:04.626234Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:25:04.627799Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:25:04.708602Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:25:14.744485Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:25:14.746035Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:25:14.886112Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:25:24.918985Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:25:24.920619Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:25:24.996277Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:25:29.297303Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:25:29.298914Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:25:29.310044Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:25:29.327646Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:25:33.710679Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:25:33.712202Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:25:33.780915Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:25:43.807471Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:25:43.809253Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:25:43.947961Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:25:53.976874Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:25:53.978593Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:25:54.053735Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:25:58.112396Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:25:58.114278Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:25:58.129238Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:25:58.205957Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:26:02.827269Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:26:02.828833Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:26:02.897540Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:26:12.929142Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:26:12.930827Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:26:13.083136Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:26:23.116690Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:26:23.118775Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:26:23.198238Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:26:27.034185Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:26:27.035764Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:26:27.048463Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:26:27.067786Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:26:32.007955Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:26:32.009663Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:26:32.092399Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:26:42.120385Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:26:42.122012Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:26:42.265840Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:26:52.293551Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:26:52.295200Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:26:52.363813Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:26:55.847951Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:26:55.849567Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:26:55.863714Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:26:55.886292Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:27:01.139684Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:27:01.141615Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:27:01.268114Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:27:11.302572Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:27:11.304336Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:27:11.384012Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:27:21.416386Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:27:21.418131Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:27:21.490598Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:27:24.672892Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:27:24.674687Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:27:24.687489Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:27:24.706822Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:27:30.253596Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:27:30.255350Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:27:30.398197Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:27:40.431604Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:27:40.433310Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:27:40.506359Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:27:50.540375Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:27:50.542028Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:27:50.612441Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:27:53.471428Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:27:53.477456Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:27:53.490228Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:27:53.509160Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:27:59.365213Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:27:59.366969Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:27:59.506286Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:28:09.529506Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:28:09.531274Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:28:09.612909Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:28:19.646685Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:28:19.648682Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:28:19.721543Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:28:22.307060Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:28:22.308806Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:28:22.321657Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:28:22.341410Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:28:28.496702Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:28:28.498361Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:28:28.635278Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:28:38.667382Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:28:38.669013Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:28:38.740782Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:28:48.764453Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:28:48.766183Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:28:48.327803Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:28:51.084861Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:28:51.086714Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:28:51.098547Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:28:51.117224Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:28:57.614023Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:28:57.615754Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:28:57.687052Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:29:07.711022Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:29:07.712687Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:29:07.782015Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:29:16.600625Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:29:16.602340Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:29:16.733185Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:29:19.932442Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:29:19.934138Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:29:19.946427Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:29:19.964703Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:29:26.764371Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:29:26.766107Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:29:26.840213Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:29:36.867760Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:29:36.869732Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:29:36.937004Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:29:45.691090Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:29:45.692861Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:29:45.822507Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:29:48.724597Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:29:48.726300Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:29:48.738419Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:29:48.756454Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:29:55.856782Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:29:55.858589Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:29:55.932226Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:30:05.962806Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:30:05.964529Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:30:06.035106Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:30:14.780792Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:30:14.782511Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:30:14.921288Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:30:17.517319Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:30:17.519016Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:30:17.530770Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:30:17.549378Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:30:24.958499Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:30:24.960223Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:30:25.033386Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:30:35.066857Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:30:35.068538Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:30:35.189265Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:30:43.974130Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:30:43.975824Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:30:44.046482Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:30:46.349443Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:30:46.351227Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:30:46.362778Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:30:46.381629Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:30:54.078833Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:30:54.080613Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:30:54.153316Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:31:04.186066Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:31:04.187735Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:31:04.320801Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:31:13.046959Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:31:13.048637Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:31:13.119399Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:31:15.136426Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:31:15.138152Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:31:15.150747Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:31:15.229447Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:31:23.155186Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:31:23.156970Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:31:23.223657Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:31:33.256095Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:31:33.257851Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:31:33.395398Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:31:42.166762Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:31:42.168439Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:31:42.241082Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:31:44.004325Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:31:44.006101Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:31:44.018513Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:31:44.037263Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:31:52.271815Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:31:52.273470Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:31:52.349799Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:32:02.383369Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:32:02.385120Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:32:02.525779Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:32:11.274727Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:32:11.276504Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:32:11.348126Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:32:12.786986Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:32:12.789032Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:32:12.802144Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:32:12.821491Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:32:21.380727Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:32:21.382531Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:32:21.509372Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:32:31.544385Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:32:31.546101Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:32:31.629949Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:32:40.389063Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:32:40.390849Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:32:40.470764Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:32:41.577443Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:32:41.579197Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:32:41.591396Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:32:41.610135Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:32:50.502378Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:32:50.504298Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:32:50.666592Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:33:00.700411Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:33:00.702146Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:33:00.777379Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:33:09.575287Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:33:09.577227Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:33:09.647425Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:33:10.411807Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:33:10.413583Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:33:10.427390Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:33:10.451696Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:33:19.683147Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:33:19.684882Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:33:19.840509Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:33:29.879033Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:33:29.880893Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:33:29.950623Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:33:38.666558Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:33:38.668411Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:33:38.741605Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:33:39.184091Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:33:39.186014Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:33:39.200261Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:33:39.220826Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:33:48.773804Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:33:48.776570Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:33:48.931874Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:33:58.965191Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:33:58.966926Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:33:59.038987Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:34:07.822897Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:34:07.824762Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:34:07.944878Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:34:08.065707Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:34:08.067458Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:34:08.079747Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:34:08.099316Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:34:17.971090Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:34:17.972746Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:34:18.046229Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:34:28.078671Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:34:28.080525Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:34:28.151245Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:34:36.848354Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:34:36.850103Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:34:36.862246Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:34:36.880400Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:34:36.889765Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:34:36.891688Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:34:37.019637Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:34:47.049101Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:34:47.050774Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:34:47.123891Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:34:57.157712Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:34:57.159630Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:34:57.230066Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:35:05.673079Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:35:05.674856Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:35:05.687089Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:35:05.707155Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:35:05.974306Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:35:05.976035Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:35:06.145924Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:35:16.183192Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:35:16.185178Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:35:16.254443Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:35:26.290018Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:35:26.292052Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:35:26.370837Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:35:34.461999Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:35:34.463837Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:35:34.476822Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:35:34.495188Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:35:35.104958Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:35:35.106898Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:35:35.274661Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:35:45.311482Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:35:45.313625Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:35:45.395587Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:35:55.428611Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:35:55.430394Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:35:55.564849Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:36:03.319962Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:36:03.321764Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:36:03.334716Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:36:03.354173Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:36:04.359930Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:36:04.361725Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:36:04.449599Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:36:14.475282Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:36:14.477043Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:36:14.556576Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:36:24.584780Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:36:24.586498Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:36:24.756093Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:36:32.077067Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:36:32.078784Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:36:32.092011Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:36:32.176008Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:36:33.477316Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:36:33.479471Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:36:33.557557Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:36:43.587741Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:36:43.589557Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:36:43.672521Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:36:53.696300Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:36:53.698236Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:36:53.828439Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:37:00.925435Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:37:00.927244Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:37:00.940074Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:37:00.958382Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:37:02.581949Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:37:02.583686Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:37:02.654332Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:37:12.686294Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:37:12.688003Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:37:12.763846Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:37:22.796663Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:37:22.798413Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:37:22.941156Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:37:29.724687Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:37:29.726393Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:37:29.737869Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:37:29.756897Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:37:31.690573Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:37:31.692337Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:37:31.765359Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:37:41.790789Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:37:41.792507Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:37:41.912958Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:37:51.944816Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:37:51.946518Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:37:52.020033Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:37:58.508997Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:37:58.510644Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:37:58.522717Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:37:58.541397Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:38:00.767424Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:38:00.769096Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:38:00.839090Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:38:10.865325Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:38:10.866985Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:38:10.998833Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:38:21.021890Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:38:21.023613Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:38:21.091914Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:38:27.290781Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:38:27.292302Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:38:27.304620Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:38:27.323562Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:38:29.820187Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:38:29.822001Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:38:29.892855Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:38:39.925557Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:38:39.927309Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:38:40.081580Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:38:50.110986Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:38:50.112685Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:38:50.185288Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:38:56.045261Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:38:56.047109Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:38:56.058927Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:38:56.077979Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:38:58.911421Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:38:58.913212Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:38:58.981988Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:39:09.015280Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:39:09.017317Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:39:09.159665Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:39:19.185423Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:39:19.187235Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:39:19.262836Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:39:24.899531Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:39:24.901195Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:39:24.912415Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:39:24.930663Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:39:28.051248Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:39:28.052948Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:39:28.182443Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:39:38.211662Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:39:38.213390Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:39:38.284744Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:39:48.317109Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:39:48.318763Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:39:48.388822Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:39:53.672552Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:39:53.674362Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:39:53.686535Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:39:53.705161Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:39:57.133116Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:39:57.134769Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:39:57.266003Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:40:07.290019Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:40:07.291652Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:40:07.365670Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:40:17.394487Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:40:17.396198Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:40:17.465593Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:40:22.423617Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:40:22.425362Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:40:22.437442Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:40:22.457662Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:40:26.187406Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:40:26.189156Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:40:26.321577Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:40:36.366764Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:40:36.368465Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:40:36.441703Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:40:46.476642Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:40:46.478660Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:40:46.566295Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:40:51.193505Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:40:51.195375Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:40:51.207888Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:40:51.227337Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:40:55.313215Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:40:55.314997Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:40:55.462672Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:41:05.497504Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:41:05.499186Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:41:05.580765Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:41:15.613263Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:41:15.615218Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:41:14.532846Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:41:20.006060Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:41:20.007759Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:41:20.020594Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:41:20.039975Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:41:24.566643Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:41:24.568519Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:41:24.654366Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:41:34.690506Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:41:34.692343Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:41:34.767599Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:41:43.522579Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:41:43.524301Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:41:43.661519Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:41:48.830219Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:41:48.832122Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:41:48.845921Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:41:48.927183Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:41:53.703627Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:41:53.706087Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:41:53.786680Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:42:03.823233Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:42:03.825071Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:42:03.900488Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:42:12.618488Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:42:12.620246Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:42:12.756371Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:42:17.654121Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:42:17.655856Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:42:17.668643Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:42:17.688092Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:42:22.780279Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:42:22.782022Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:42:22.856457Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:42:32.890598Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:42:32.892304Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:42:32.963046Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:42:41.717893Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:42:41.719533Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:42:41.877383Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:42:46.462090Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:42:46.464114Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:42:46.478757Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:42:46.501295Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:42:51.907025Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:42:51.908687Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:42:51.984006Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:43:02.019631Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:43:02.021357Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:43:02.148477Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:43:10.870142Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:43:10.872038Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:43:10.942715Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:43:15.253034Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:43:15.254858Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:43:15.268197Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:43:15.288511Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:43:20.976373Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:43:20.978161Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:43:21.053715Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:43:31.083418Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:43:31.085081Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:43:31.225401Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:43:39.969631Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:43:39.971473Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:43:40.043686Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:43:44.046047Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:43:44.047914Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:43:44.065416Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:43:44.094055Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:43:50.068860Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:43:50.070563Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:43:50.139911Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:44:00.176637Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:44:00.178887Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:44:00.332679Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:44:09.077084Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:44:09.078784Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:44:09.150221Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:44:12.858215Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:44:12.859979Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:44:12.872079Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:44:12.890987Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:44:19.182993Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:44:19.184636Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:44:19.265010Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:44:29.296372Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:44:29.298098Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:44:29.437668Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:44:38.161578Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:44:38.163233Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:44:38.242757Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:44:41.645310Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:44:41.647170Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:44:41.661838Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:44:41.681422Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:44:48.276031Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:44:48.277602Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:44:48.398318Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:44:58.432411Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:44:58.434228Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:44:58.512229Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:45:07.227589Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:45:07.229236Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:45:07.303803Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:45:10.407344Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:45:10.409115Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:45:10.420651Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:45:10.439689Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:45:17.327975Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:45:17.329659Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:45:17.473942Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:45:27.508490Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:45:27.510221Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:45:27.585741Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:45:36.327064Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:45:36.328910Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:45:36.401402Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:45:39.208620Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:45:39.210910Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:45:39.223778Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:45:39.243006Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:45:46.440204Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:45:46.441938Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:45:46.577048Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:45:56.606155Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:45:56.607861Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:45:56.682833Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:46:05.428462Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:46:05.430641Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:46:05.514763Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:46:08.004293Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:46:08.006014Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:46:08.018246Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:46:08.036604Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:46:15.550875Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:46:15.553002Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:46:15.682531Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:46:25.715413Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:46:25.717336Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:46:25.798635Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:46:34.504704Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:46:34.506778Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:46:34.647286Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:46:36.760253Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:46:36.762130Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:46:36.775122Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:46:36.794796Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:46:44.671099Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:46:44.672845Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:46:44.747042Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:46:54.776730Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:46:54.778480Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:46:54.852848Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:47:03.624393Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:47:03.625878Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:47:03.753416Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:47:05.582337Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:47:05.584101Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:47:05.596834Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:47:05.680884Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:47:13.782880Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:47:13.784545Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:47:13.857473Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:47:23.885235Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:47:23.886915Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:47:23.957189Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:47:32.673147Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:47:32.674950Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:47:32.816032Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:47:34.416872Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:47:34.418517Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:47:34.430848Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:47:34.449961Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:47:42.846861Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:47:42.848520Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:47:42.921891Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:47:52.954770Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:47:52.956464Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:47:53.028879Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:48:01.736643Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:48:01.738042Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:48:01.877975Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:48:03.188162Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:48:03.189880Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:48:03.202298Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:48:03.222617Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:48:11.907958Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:48:11.909456Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:48:11.979626Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:48:22.016247Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:48:22.017825Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:48:22.148074Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:48:30.880207Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:48:30.881862Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:48:30.959123Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:48:31.976675Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:48:31.978555Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:48:31.992166Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:48:32.012144Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:48:40.990992Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:48:40.992524Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:48:41.066836Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:48:51.094472Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:48:51.096084Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:48:51.253981Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:48:59.952377Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:48:59.954164Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:49:00.028795Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:49:00.726859Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:49:00.728785Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:49:00.742418Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:49:00.763701Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:49:10.066742Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:49:10.068472Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:49:10.137361Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:49:20.171976Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:49:20.173792Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:49:20.308539Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:49:29.063709Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:49:29.065510Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:49:29.141760Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:49:29.527716Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:49:29.529409Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:49:29.541923Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:49:29.561353Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:49:39.170413Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:49:39.172152Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:49:39.250491Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:49:49.285053Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:49:49.286744Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:49:49.433120Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:49:58.126903Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:49:58.128647Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:49:58.201179Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:49:58.287292Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:49:58.289607Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:49:58.302160Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:49:58.320480Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:50:08.233896Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:50:08.235588Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:50:08.364703Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:50:18.388024Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:50:18.389776Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:50:18.461489Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:50:27.080189Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:50:27.082023Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:50:27.094592Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:50:27.113025Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:50:27.203346Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:50:27.205151Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:50:27.287307Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:50:37.326206Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:50:37.328210Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:50:37.479752Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:50:47.513840Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:50:47.515645Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:50:47.596622Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:50:55.856623Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:50:55.858461Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:50:55.871365Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:50:55.889732Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:50:56.329744Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:50:56.331639Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:50:56.408277Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:51:06.441653Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:51:06.443780Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:51:06.592437Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:51:16.631266Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:51:16.633055Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:51:16.709489Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:51:24.581658Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:51:24.583421Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:51:24.596318Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:51:24.615476Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:51:25.410164Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:51:25.411890Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:51:25.487032Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:51:35.513457Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:51:35.515091Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:51:35.655465Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:51:45.681073Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:51:45.682826Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:51:45.755043Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:51:53.362339Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:51:53.364064Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:51:53.376063Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:51:53.393822Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:51:54.500212Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:51:54.501995Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:51:54.628035Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:52:04.663721Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:52:04.665887Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:52:04.745484Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:52:14.772009Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:52:14.773789Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:52:14.844933Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:52:22.110537Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:52:22.112207Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:52:22.123657Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:52:22.195984Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:52:23.542198Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:52:23.543941Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:52:23.678985Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:52:33.714997Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:52:33.716798Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:52:33.792395Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:52:43.824157Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:52:43.825967Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:52:43.901045Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:52:50.932508Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:52:50.934246Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:52:50.946751Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:52:50.965389Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:52:52.640157Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:52:52.641821Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:52:52.776392Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:53:02.805735Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:53:02.807507Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:53:02.881060Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:53:12.909658Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:53:12.911307Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:53:12.989907Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:53:19.665408Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:53:19.667190Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:53:19.681611Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:53:19.702619Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:53:21.667620Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:53:21.669296Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:53:21.804890Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:53:31.826698Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:53:31.828381Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:53:31.906587Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:53:41.395439Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:53:41.396912Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:53:40.776890Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:53:48.453410Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:53:48.455138Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:53:48.467720Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:53:48.487617Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:53:50.813598Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:53:50.815309Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:53:50.890818Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:54:00.924947Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:54:00.926840Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:54:01.005112Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:54:09.722900Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:54:09.724715Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:54:09.858231Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:54:17.208465Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:54:17.210209Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:54:17.222084Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:54:17.240708Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:54:19.885089Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:54:19.886584Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:54:19.957313Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:54:29.983721Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:54:29.985728Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:54:30.065292Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:54:38.796737Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:54:38.798580Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:54:38.943326Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:54:45.964050Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:54:45.965900Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:54:45.977637Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:54:45.996466Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:54:48.978481Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:54:48.980180Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:54:49.053276Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:54:59.101020Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:54:59.102809Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:54:59.175325Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:55:07.949255Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:55:07.950975Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:55:08.098322Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:55:14.755828Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:55:14.757624Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:55:14.770008Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:55:14.789606Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:55:18.123001Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:55:18.124672Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:55:18.199388Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:55:28.232147Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:55:28.234271Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:55:28.361818Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:55:37.039890Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:55:37.041575Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:55:37.112312Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:55:43.461523Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:55:43.463339Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:55:43.476174Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:55:43.496140Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:55:47.144045Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:55:47.145843Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:55:47.219480Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:55:57.249981Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:55:57.251540Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:55:57.385757Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:56:06.129080Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:56:06.130549Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:56:06.202738Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:56:12.264217Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:56:12.265915Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:56:12.278027Z Buckets actifs : demo-bucket-chaos-v2
+2026-05-13T21:56:12.297216Z Subnets actifs : subnet-73ad3eb0, subnet-7a1be535, subnet-bb2eac85, subnet-d6f9d690, subnet-de93cbab, subnet-acb50707, subnet-d91ee8ad
+2026-05-13T21:56:16.237422Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:56:16.239505Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:56:16.319547Z 🔄 [RECOVERY] Cycle de vérification terminé
+2026-05-13T21:56:26.343380Z Instance i-809b0c14074b1effd → état running
+2026-05-13T21:56:26.345120Z Instance i-1c84431542ad7fc40 → état running
+2026-05-13T21:56:26.497233Z 🔄 [RECOVERY] Cycle de vérification terminé
