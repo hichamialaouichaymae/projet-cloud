@@ -1,0 +1,24 @@
+{
+  "failures": [
+    {
+      "id": "kill_instance",
+      "description": "Arrêter une instance EC2 au hasard"
+    },
+    {
+      "id": "delete_bucket",
+      "description": "Supprimer un bucket S3"
+    },
+    {
+      "id": "network_failure",
+      "description": "Supprimer un subnet pour simuler une panne réseau"
+    },
+    {
+      "id": "cpu_stress",
+      "description": "Lancer une instance avec CPU saturé"
+    },
+    {
+      "id": "multi_failure",
+      "description": "Combiner plusieurs pannes en même temps"
+    }
+  ]
+}
