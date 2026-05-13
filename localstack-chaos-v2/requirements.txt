@@ -1,5 +1,0 @@
-flask==2.3.2
-boto3==1.28.0
-prometheus-flask-exporter==0.22.4
-psycopg2-binary==2.9.6
-requests==2.31.0
