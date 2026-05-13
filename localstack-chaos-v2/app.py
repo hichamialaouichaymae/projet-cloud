@@ -12,12 +12,12 @@ import monitoring
 import chaos_engine
 import chaos_recovery   # FIX : import direct pour déclencher un cycle immédiat
 
-# ─── Flask ────────────────────────────────────────────────────────────────────
+# ─── Flask ───────────────────────────────────────────────────────────
 app = Flask(__name__)
 metrics = PrometheusMetrics(app)
 metrics.info("flask_app_info", "Chaos Control Center v2", version="2.0.0")
 
-# ─── Config AWS ───────────────────────────────────────────────────────────────
+# ─── Config AWS ─────────────────────────────────────────────────────────
 AWS_ENDPOINT = os.getenv("AWS_ENDPOINT_URL",      "http://localstack:4566")
 AWS_REGION   = os.getenv("AWS_DEFAULT_REGION",    "us-east-1")
 AWS_ACCESS   = os.getenv("AWS_ACCESS_KEY_ID",     "test")
@@ -33,7 +33,7 @@ def _s3():
         endpoint_url=AWS_ENDPOINT, region_name=AWS_REGION,
         aws_access_key_id=AWS_ACCESS, aws_secret_access_key=AWS_SECRET)
 
-# ─── Chaos config ─────────────────────────────────────────────────────────────
+# ─── Chaos config ─────────────────────────────────────────────────────────
 _chaos_path = "config/chaos_config.json" if os.path.exists("config/chaos_config.json") else "chaos_config.json"
 chaos_config = load_json(_chaos_path, default={"failures": []})
 
@@ -42,18 +42,18 @@ BASE_DIR  = os.path.dirname(os.path.abspath(__file__))
 LOG_PATH  = os.path.join(BASE_DIR, "logs", "events.log")
 _log_lock = threading.Lock()
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════
 #  PAGES
-# ══════════════════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════
 
 @app.route("/")
 @app.route("/ui")
 def index():
     return render_template("index.html", failures=chaos_config.get("failures", []))
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════
 #  API  INSTANCES EC2
-# ══════════════════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════
 
 @app.route("/api/instances")
 def api_instances():
@@ -105,9 +105,9 @@ def api_terminate(instance_id):
         log_event(f"❌ terminate {instance_id} : {e}", LOG_PATH)
         return jsonify({"status": "error", "message": str(e)}), 500
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════
 #  API  S3
-# ══════════════════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════
 
 @app.route("/api/buckets")
 def api_buckets():
@@ -127,9 +127,9 @@ def api_create_bucket(name):
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════
 #  API  RÉSEAU
-# ══════════════════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════
 
 @app.route("/api/network")
 def api_network():
@@ -147,9 +147,9 @@ def api_network():
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════
 #  API  CHAOS
-# ══════════════════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════
 
 @app.route("/api/inject/<failure_id>", methods=["POST","GET"])
 def api_inject(failure_id):
@@ -160,23 +160,23 @@ def api_inject(failure_id):
     log_event(f"🎯 [INJECT] Déclenchement : {meta['description']}", LOG_PATH)
     result = chaos_engine.execute_failure(failure_id)
 
-    # FIX BUG 3 : déclencher un cycle de recovery immédiatement après l'injection
-    # → l'utilisateur voit la récupération dans les ~2s sans attendre les 10s
+    # OPTIMISATION : déclencher un cycle de recovery avec délai minimal
+    # → l'utilisateur voit la récupération dans les ~1s au lieu de 2s
     threading.Thread(target=_delayed_recovery, daemon=True).start()
 
     return jsonify(result)
 
 def _delayed_recovery():
-    """Attend 2s (le temps que la panne soit effective) puis lance recover_all."""
-    time.sleep(2)
+    """Attend 1s (le temps que la panne soit effective) puis lance recover_all."""
+    time.sleep(1)
     try:
         chaos_recovery.recover_all()
     except Exception as e:
         log_event(f"❌ Erreur recovery post-injection : {e}", LOG_PATH)
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════
 #  API  MONITORING & LOGS
-# ══════════════════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════
 
 @app.route("/api/monitor")
 def api_monitor():
@@ -198,9 +198,9 @@ def api_logs():
         "logs": [l.strip() for l in lines[-100:] if l.strip()],
     })
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════
 #  SSE  STREAMS
-# ══════════════════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════
 
 @app.route("/api/logs/stream")
 def api_logs_stream():
@@ -223,7 +223,7 @@ def api_logs_stream():
 
 @app.route("/api/instances/stream")
 def api_instances_stream():
-    """SSE : état des instances EC2 toutes les 3 s."""
+    """SSE : état des instances EC2 toutes les 2s (OPTIMISÉ)."""
     def generate():
         last = None
         while True:
@@ -246,14 +246,14 @@ def api_instances_stream():
                     yield f"data: {payload}\n\n"
             except Exception as e:
                 yield f"data: {json.dumps({'error': str(e)})}\n\n"
-            time.sleep(3)
+            time.sleep(2)  # OPTIMISÉ : 2s au lieu de 3s
     return Response(stream_with_context(generate()),
                     mimetype="text/event-stream",
                     headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})
 
 @app.route("/api/infra/stream")
 def api_infra_stream():
-    """SSE : état réseau + S3 toutes les 5 s."""
+    """SSE : état réseau + S3 toutes les 3s (OPTIMISÉ)."""
     def generate():
         last = None
         while True:
@@ -271,14 +271,14 @@ def api_infra_stream():
                     yield f"data: {payload}\n\n"
             except Exception as e:
                 yield f"data: {json.dumps({'error': str(e)})}\n\n"
-            time.sleep(5)
+            time.sleep(3)  # OPTIMISÉ : 3s au lieu de 5s
     return Response(stream_with_context(generate()),
                     mimetype="text/event-stream",
                     headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════
 #  RÉTROCOMPATIBILITÉ
-# ══════════════════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════
 
 @app.route("/list-instances")
 def list_instances():
@@ -316,9 +316,9 @@ def stop_instance(instance_id):
 def terminate_instance(instance_id):
     return api_terminate(instance_id)
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════
 #  DÉMARRAGE
-# ══════════════════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════
 
 if __name__ == "__main__":
     os.makedirs(os.path.join(BASE_DIR, "logs"), exist_ok=True)
