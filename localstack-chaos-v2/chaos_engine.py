@@ -26,9 +26,9 @@ def _s3():
         endpoint_url=AWS_ENDPOINT, region_name=AWS_REGION,
         aws_access_key_id=AWS_ACCESS, aws_secret_access_key=AWS_SECRET)
 
-# ─── Helpers internes ────────────────────────────────────────────────────────
-def _all_instances(ec2):
-    """Retourne toutes les instances non-terminated."""
+# ─── Helpers internes ───────────────────────────────────────────────────────
+def _all_instances_not_terminated(ec2):
+    """Retourne toutes les instances non-terminées."""
     resp = ec2.describe_instances()
     return [
         i
@@ -38,14 +38,14 @@ def _all_instances(ec2):
     ]
 
 def _running_instances(ec2):
-    return [i for i in _all_instances(ec2) if i["State"]["Name"] == "running"]
+    return [i for i in _all_instances_not_terminated(ec2) if i["State"]["Name"] == "running"]
 
 def _state_path():
     return os.getenv("STATE_FILE", "state.json")
 
-# ═══════════════════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════
 #  PANNES
-# ═══════════════════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════
 
 def kill_instance() -> dict:
     """Arrête (stop) une instance EC2 running au hasard."""
