@@ -39,6 +39,16 @@ def _load_state():
     return load_json(STATE_FILE, default={})
  
 def _all_instances(ec2):
+    """Retourne TOUTES les instances, y compris les terminées."""
+    resp = ec2.describe_instances()
+    return [
+        i
+        for r in resp.get("Reservations", [])
+        for i in r.get("Instances", [])
+    ]
+
+def _all_instances_not_terminated(ec2):
+    """Retourne toutes les instances non-terminées."""
     resp = ec2.describe_instances()
     return [
         i
@@ -47,7 +57,7 @@ def _all_instances(ec2):
         if i["State"]["Name"] not in ("terminated",)
     ]
  
-# ─────────────────────────────────────────────────────────────────────────────
+# ────────────────────────────────────────────────────────────────────────────
 def _get_valid_subnet(ec2, preferred_id=None):
     try:
         subnets = ec2.describe_subnets().get("Subnets", [])
@@ -99,24 +109,57 @@ def log_instance_states():
  
 def recover_instance():
     """
-    Stratégie de recovery en deux temps :
+    Stratégie de recovery en trois temps :
       1. Si des instances sont stopped → les redémarrer (start_instances).
-      2. S'il n'y a vraiment aucune instance → en créer une nouvelle.
+      2. Si des instances sont terminated → les créer de nouvelles (les remplacer).
+      3. S'il n'y a vraiment aucune instance non-terminée → en créer une nouvelle.
     """
     ec2 = _ec2()
     try:
-        instances = _all_instances(ec2)
-        active = [i for i in instances if i["State"]["Name"] == "running"]
+        # FIX : récupérer TOUTES les instances (y compris terminated)
+        all_instances = _all_instances(ec2)
+        non_terminated = _all_instances_not_terminated(ec2)
+        
+        # Vérifier s'il y a des instances running
+        active = [i for i in non_terminated if i["State"]["Name"] == "running"]
         if active:
             return  # Tout va bien
  
         # FIX BUG 1 : redémarrer les stopped au lieu de recréer à l'infini
-        stopped_ids = [i["InstanceId"] for i in instances if i["State"]["Name"] == "stopped"]
+        stopped_ids = [i["InstanceId"] for i in non_terminated if i["State"]["Name"] == "stopped"]
         if stopped_ids:
             ec2.start_instances(InstanceIds=stopped_ids)
             log_event(f"🔄 Instance(s) {stopped_ids} redémarrée(s) (recovery)", LOG_PATH)
             return
  
+        # FIX BUG 2 : si des instances sont terminées, en créer une nouvelle
+        terminated = [i for i in all_instances if i["State"]["Name"] == "terminated"]
+        if terminated:
+            log_event(f"⚠️ Instance(s) {[i['InstanceId'] for i in terminated]} terminée(s). Création d'une nouvelle...", LOG_PATH)
+            # Créer une nouvelle instance pour remplacer les terminées
+            state     = _load_state()
+            subnet_id = _get_valid_subnet(ec2, state.get("subnet_id"))
+            sg_id     = _get_valid_sg(ec2, state.get("sg_id"))
+    
+            kwargs = {}
+            if subnet_id:
+                net = {
+                    "DeviceIndex": 0,
+                    "SubnetId":    subnet_id,
+                    "AssociatePublicIpAddress": True,
+                }
+                if sg_id:
+                    net["Groups"] = [sg_id]
+                kwargs["NetworkInterfaces"] = [net]
+    
+            resp = ec2.run_instances(
+                ImageId=AMI_ID, MinCount=1, MaxCount=1,
+                InstanceType=ITYPE, **kwargs
+            )
+            vm = resp["Instances"][0]["InstanceId"]
+            log_event(f"🔄 Nouvelle instance {vm} créée en remplacement des terminées (recovery)", LOG_PATH)
+            return
+        
         # Aucune instance du tout → créer une nouvelle
         state     = _load_state()
         subnet_id = _get_valid_subnet(ec2, state.get("subnet_id"))
@@ -190,7 +233,7 @@ def recover_network():
 def recover_cpu_stress():
     ec2 = _ec2()
     try:
-        instances = _all_instances(ec2)
+        instances = _all_instances_not_terminated(ec2)
         stress = [
             i["InstanceId"] for i in instances
             if any(t["Key"] == "chaos" and t["Value"] == "cpu-stress"
