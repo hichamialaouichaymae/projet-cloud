@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaos Control Center</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; transition: background-color 0.3s, border-color 0.3s, color 0.3s; }
+        
+        :root {
+            --orange: #E85D04;
+            --orange-light: #FF8C38;
+            --orange-pale: #FFF3EC;
+            --black: #111111;
+            --white: #FFFFFF;
+            --gray: #F5F5F5;
+            --border: #E0E0E0;
+            --text-muted: #555555;
+            --card-bg: #FFFFFF;
+        }
+
+        /* DARK MODE VARIABLES */
+        [data-theme="dark"] {
+            --white: #111111;
+            --black: #ffffff;
+            --gray: #1a1a1a;
+            --border: #333333;
+            --text-muted: #aaaaaa;
+            --card-bg: #161616;
+            --orange-pale: #2a1a0a;
+        }
+
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--gray); color: var(--black); min-height: 100vh; }
+
+        /* HEADER & CONTROLS */
+        .header { background: #000000; padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
+        .header-left h1 { font-size: 22px; font-weight: 700; color: var(--orange); }
+        
+        .header-right { display: flex; gap: 15px; align-items: center; }
+        .theme-toggle { cursor: pointer; color: var(--orange); font-size: 20px; background: none; border: 1px solid var(--orange); padding: 5px; border-radius: 5px; }
+
+        /* NOTIFICATION */
+        .notification { position: fixed; top: 20px; right: 20px; padding: 12px 20px; border-radius: 4px; display: none; z-index: 1000; font-weight: 600; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        .success { background: #27ae60; color: white; border-left: 5px solid #1e8449; }
+        .error { background: #c0392b; color: white; border-left: 5px solid #962d22; }
+
+        /* RESPONSIVE GRID */
+        .container { padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
+        .full { grid-column: 1 / -1; }
+
+        /* CARDS */
+        .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; }
+        .card-head { background: #000000; padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; }
+        .card-head .title { display: flex; align-items: center; gap: 10px; color: white; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; }
+        .card-head i { color: var(--orange); }
+
+        .card-body { padding: 15px; flex-grow: 1; }
+
+        /* BUTTONS */
+        .btn-group { display: flex; flex-wrap: wrap; gap: 8px; }
+        button { font-size: 11px; font-weight: bold; padding: 8px 14px; border: none; border-radius: 3px; cursor: pointer; text-transform: uppercase; display: inline-flex; align-items: center; gap: 6px; }
+        .failure-btn { background: var(--orange); color: white; }
+        .action-btn { background: #27ae60; color: white; }
+        .stop-btn { background: #f39c12; color: white; }
+        .terminate-btn { background: #c0392b; color: white; }
+
+        /* LOGS FILTER */
+        .log-filters { display: flex; gap: 5px; margin-bottom: 10px; }
+        .filter-btn { background: #333; color: #888; font-size: 9px; }
+        .filter-btn.active { background: var(--orange); color: white; }
+
+        .logs { height: 200px; overflow-y: auto; background: #0a0a0a; color: #00ff00; padding: 12px; font-family: 'Courier New', monospace; font-size: 12px; line-height: 1.6; border-radius: 4px; }
+        .log-line { border-bottom: 1px solid #1a1a1a; padding: 2px 0; }
+
+        /* TABLE */
+        table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        th { text-align: left; padding: 10px; background: #000; color: var(--orange); font-size: 11px; }
+        td { padding: 10px; border-bottom: 1px solid var(--border); }
+
+        /* CHART CONTAINER */
+        #chart-container { height: 180px; width: 100%; }
+
+        @media (max-width: 600px) {
+            .container { grid-template-columns: 1fr; }
+            .header { justify-content: center; text-align: center; }
+        }
+    </style>
+</head>
+<body data-theme="light">
+
+    <div id="notification" class="notification"></div>
+
+    <header class="header">
+        <div class="header-left">
+            <h1>Chaos Control Center</h1>
+        </div>
+        <div class="header-right">
+            <button class="theme-toggle" onclick="toggleTheme()"><i id="theme-icon" class="ti ti-moon"></i></button>
+            <div style="color:var(--orange); font-size:12px; font-weight:bold;"><i class="ti ti-activity"></i> SYSTEM LIVE</div>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- INJECTION -->
+        <div class="card full">
+            <div class="card-head">
+                <div class="title"><i class="ti ti-bolt"></i> Injection de pannes</div>
+            </div>
+            <div class="card-body">
+                <div class="btn-group">
+                    {% for failure in failures %}
+                        <button class="failure-btn" onclick="injectFailure('{{ failure.id }}')">
+                            <i class="ti ti-flame"></i> {{ failure.description }}
+                        </button>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- MONITORING AVEC GRAPHIQUE -->
+        <div class="card">
+            <div class="card-head">
+                <div class="title"><i class="ti ti-chart-line"></i> Monitoring Courbe</div>
+            </div>
+            <div class="card-body">
+                <div id="chart-container">
+                    <canvas id="uptimeChart"></canvas>
+                </div>
+                <button class="action-btn" onclick="runMonitor()" style="margin-top:10px; width:100%; justify-content:center;">
+                    <i class="ti ti-refresh"></i> Scan Système
+                </button>
+                <div id="monitor-msg" style="margin-top:10px; font-size:12px; font-style:italic; color:var(--text-muted);">Prêt pour l'analyse...</div>
+            </div>
+        </div>
+
+        <!-- EC2 INSTANCES -->
+        <div class="card">
+            <div class="card-head">
+                <div class="title"><i class="ti ti-server"></i> Instances EC2</div>
+            </div>
+            <div class="card-body" style="max-height: 300px; overflow-y: auto;">
+                <table id="instances-table">
+                    <thead>
+                        <tr><th>ID</th><th>État</th><th>Action</th></tr>
+                    </thead>
+                    <tbody id="instances-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- LOGS AVEC FILTRE -->
+        <div class="card full">
+            <div class="card-head">
+                <div class="title"><i class="ti ti-list-details"></i> Logs Filtrés</div>
+            </div>
+            <div class="card-body">
+                <div class="log-filters">
+                    <button class="filter-btn active" onclick="filterLogs('ALL')">TOUT</button>
+                    <button class="filter-btn" onclick="filterLogs('PANNE')">💥 PANNES</button>
+                    <button class="filter-btn" onclick="filterLogs('RECOVERY')">🔄 RECUP</button>
+                    <button class="filter-btn" onclick="filterLogs('ACTION')">▶️ ACTIONS</button>
+                </div>
+                <div id="logs" class="logs"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let currentFilter = 'ALL';
+        let uptimeData = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100];
+        let chart;
+
+        // --- DARK MODE ---
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.getElementById("theme-icon");
+            if (body.getAttribute("data-theme") === "light") {
+                body.setAttribute("data-theme", "dark");
+                icon.className = "ti ti-sun";
+            } else {
+                body.setAttribute("data-theme", "light");
+                icon.className = "ti ti-moon";
+            }
+        }
+
+        // --- CHART CONFIG ---
+        function initChart() {
+            const ctx = document.getElementById('uptimeChart').getContext('2d');
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['', '', '', '', '', '', '', '', '', ''],
+                    datasets: [{
+                        label: 'Disponibilité %',
+                        data: uptimeData,
+                        borderColor: '#E85D04',
+                        backgroundColor: 'rgba(232, 93, 4, 0.1)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { y: { min: 0, max: 100, ticks: { color: '#888' } }, x: { display: false } }
+                }
+            });
+        }
+
+        // --- LOGS FILTERS ---
+        async function refreshLogs() {
+            const res = await fetch("/logs");
+            const data = await res.json();
+            const logsDiv = document.getElementById("logs");
+            logsDiv.innerHTML = "";
+            
+            data.logs.forEach(line => {
+                let show = false;
+                if (currentFilter === 'ALL') show = true;
+                else if (currentFilter === 'PANNE' && line.includes('💥')) show = true;
+                else if (currentFilter === 'RECOVERY' && line.includes('🔄')) show = true;
+                else if (currentFilter === 'ACTION' && line.includes('▶️')) show = true;
+
+                if (show) {
+                    const p = document.createElement("div");
+                    p.className = "log-line";
+                    p.textContent = line;
+                    logsDiv.appendChild(p);
+                }
+            });
+        }
+
+        function filterLogs(type) {
+            currentFilter = type;
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            refreshLogs();
+        }
+
+        // --- MOCK CHART UPDATE (Simule une chute si panne injectée) ---
+        function updateChart(isFailure = false) {
+            uptimeData.shift();
+            uptimeData.push(isFailure ? Math.floor(Math.random() * 40) : 100);
+            chart.update();
+        }
+
+        async function injectFailure(id) {
+            updateChart(true); // Impact visuel immédiat
+            const res = await fetch(`/inject/${id}`);
+            const data = await res.json();
+            showNotification(data.message, data.status === "success" ? "success" : "error");
+            refreshLogs();
+        }
+
+        // --- LOGIQUE COMMUNE ---
+        function showNotification(msg, type) {
+            const n = document.getElementById("notification");
+            n.textContent = msg;
+            n.className = `notification ${type}`;
+            n.style.display = "block";
+            setTimeout(() => n.style.display = "none", 4000);
+        }
+
+        async function refreshInstances() {
+            const res = await fetch("/list-instances");
+            const data = await res.json();
+            const tbody = document.getElementById("instances-body");
+            tbody.innerHTML = "";
+            data.instances.forEach(inst => {
+                const row = `<tr>
+                    <td style="font-family:monospace;">${inst.id}</td>
+                    <td style="color:${inst.state === 'running' ? '#27ae60' : '#e74c3c'}; font-weight:bold;">${inst.state}</td>
+                    <td><button class="stop-btn" onclick="stopInstance('${inst.id}')" style="padding:4px 8px; font-size:9px;">STOP</button></td>
+                </tr>`;
+                tbody.insertAdjacentHTML('beforeend', row);
+            });
+        }
+
+        async function runMonitor() {
+            updateChart(false);
+            const res = await fetch("/monitor");
+            const data = await res.json();
+            document.getElementById("monitor-msg").textContent = data.message;
+            refreshLogs();
+        }
+
+        window.onload = () => {
+            initChart();
+            refreshLogs();
+            refreshInstances();
+            setInterval(() => { refreshInstances(); updateChart(false); }, 10000);
+        };
+    </script>
+</body>
+</html>
