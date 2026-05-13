@@ -1,9 +1,0 @@
-{
-  "endpoint": "http://localstack:4566",
-  "region": "us-east-1",
-  "bucket": "demo-bucket-chaos-v2",
-  "vpc_id": "vpc-2ae204ca",
-  "subnet_id": "subnet-bad7089e",
-  "sg_id": "sg-2e9ea81f8a0c1ec06",
-  "instance_id": "i-f45b65c759a7a7d7c"
-}
