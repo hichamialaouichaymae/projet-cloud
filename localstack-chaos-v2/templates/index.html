@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chaos Control Center</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#0d0d0d;--surface:#131313;--surface2:#1a1a1a;--border:#222;
+  --orange:#e85d04;--orange2:#ff8c38;--green:#27ae60;--red:#e74c3c;
+  --yellow:#f39c12;--blue:#3498db;--purple:#9b59b6;
+  --text:#e0e0e0;--muted:#666;--white:#fff;
+  --font:'Segoe UI',system-ui,sans-serif;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;}
+
+/* ── HEADER ───────────────────────────────────────── */
+header{
+  background:#000;border-bottom:1px solid var(--orange);
+  padding:0 28px;height:56px;display:flex;align-items:center;
+  justify-content:space-between;position:sticky;top:0;z-index:100;
+}
+.logo{font-size:18px;font-weight:800;color:var(--orange);letter-spacing:1px;display:flex;align-items:center;gap:8px;}
+.logo span{color:var(--white);}
+.header-right{display:flex;align-items:center;gap:16px;}
+.live-dot{width:8px;height:8px;border-radius:50%;background:var(--green);
+  box-shadow:0 0 6px var(--green);animation:pulse 1.5s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.conn-status{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px;}
+.conn-status.ok .live-dot{background:var(--green);}
+.conn-status.err .live-dot{background:var(--red);}
+
+/* ── LAYOUT ───────────────────────────────────────── */
+.layout{display:grid;grid-template-columns:260px 1fr;height:calc(100vh - 56px);}
+.sidebar{background:var(--surface);border-right:1px solid var(--border);
+  overflow-y:auto;padding:16px 0;}
+.main{overflow-y:auto;padding:20px;}
+
+/* ── SIDEBAR NAV ──────────────────────────────────── */
+.nav-section{margin-bottom:4px;}
+.nav-label{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:2px;
+  padding:12px 20px 6px;text-transform:uppercase;}
+.nav-item{display:flex;align-items:center;gap:10px;padding:9px 20px;
+  cursor:pointer;font-size:13px;color:var(--muted);border-left:3px solid transparent;
+  transition:.15s;}
+.nav-item:hover{color:var(--text);background:var(--surface2);}
+.nav-item.active{color:var(--orange);border-left-color:var(--orange);background:rgba(232,93,4,.07);}
+.nav-item .icon{width:16px;text-align:center;}
+
+/* ── TABS / PANELS ────────────────────────────────── */
+.panel{display:none;}.panel.active{display:block;}
+
+/* ── CARDS ────────────────────────────────────────── */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:6px;
+  margin-bottom:16px;overflow:hidden;}
+.card-head{background:var(--surface2);border-bottom:1px solid var(--border);
+  padding:10px 16px;display:flex;align-items:center;justify-content:space-between;}
+.card-title{font-size:12px;font-weight:700;text-transform:uppercase;
+  letter-spacing:1px;color:var(--orange);display:flex;align-items:center;gap:8px;}
+.card-body{padding:16px;}
+
+/* ── GRID ─────────────────────────────────────────── */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+
+/* ── STAT BOX ─────────────────────────────────────── */
+.stat{background:var(--surface2);border:1px solid var(--border);border-radius:6px;
+  padding:14px;text-align:center;}
+.stat-val{font-size:28px;font-weight:800;color:var(--orange);}
+.stat-lbl{font-size:11px;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:1px;}
+
+/* ── TABLE ────────────────────────────────────────── */
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th{text-align:left;padding:9px 12px;background:var(--surface2);
+  color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:1px;}
+td{padding:9px 12px;border-bottom:1px solid var(--border);}
+tr:hover td{background:rgba(255,255,255,.02);}
+.mono{font-family:'Courier New',monospace;font-size:12px;}
+
+/* ── BADGES ───────────────────────────────────────── */
+.badge{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;
+  border-radius:12px;font-size:11px;font-weight:600;}
+.badge-green{background:rgba(39,174,96,.15);color:var(--green);border:1px solid rgba(39,174,96,.3);}
+.badge-red{background:rgba(231,76,60,.15);color:var(--red);border:1px solid rgba(231,76,60,.3);}
+.badge-yellow{background:rgba(243,156,18,.15);color:var(--yellow);border:1px solid rgba(243,156,18,.3);}
+.badge-gray{background:rgba(102,102,102,.15);color:var(--muted);border:1px solid rgba(102,102,102,.3);}
+.badge-orange{background:rgba(232,93,4,.15);color:var(--orange);border:1px solid rgba(232,93,4,.3);}
+.dot{width:7px;height:7px;border-radius:50%;display:inline-block;}
+.dot-green{background:var(--green);box-shadow:0 0 5px var(--green);}
+.dot-red{background:var(--red);}
+.dot-yellow{background:var(--yellow);}
+.dot-gray{background:var(--muted);}
+
+/* ── BUTTONS ──────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;
+  border:none;border-radius:4px;cursor:pointer;font-size:12px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.5px;transition:.15s;}
+.btn:disabled{opacity:.4;cursor:not-allowed;}
+.btn-start{background:rgba(39,174,96,.15);color:var(--green);border:1px solid rgba(39,174,96,.4);}
+.btn-start:hover:not(:disabled){background:var(--green);color:#000;}
+.btn-stop{background:rgba(243,156,18,.15);color:var(--yellow);border:1px solid rgba(243,156,18,.4);}
+.btn-stop:hover:not(:disabled){background:var(--yellow);color:#000;}
+.btn-terminate{background:rgba(231,76,60,.15);color:var(--red);border:1px solid rgba(231,76,60,.4);}
+.btn-terminate:hover:not(:disabled){background:var(--red);color:#fff;}
+.btn-chaos{background:rgba(232,93,4,.15);color:var(--orange);border:1px solid rgba(232,93,4,.4);}
+.btn-chaos:hover:not(:disabled){background:var(--orange);color:#fff;}
+.btn-chaos.firing{animation:shake .3s;}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.btn-xs{padding:4px 9px;font-size:10px;}
+
+/* ── CHAOS GRID ───────────────────────────────────── */
+.chaos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;}
+.chaos-card{background:var(--surface2);border:1px solid var(--border);border-radius:6px;
+  padding:14px;display:flex;flex-direction:column;gap:8px;transition:.2s;position:relative;overflow:hidden;}
+.chaos-card:hover{border-color:var(--orange);box-shadow:0 0 12px rgba(232,93,4,.15);}
+.chaos-card.injecting{border-color:var(--orange);animation:glow .6s infinite alternate;}
+@keyframes glow{from{box-shadow:0 0 6px rgba(232,93,4,.3)}to{box-shadow:0 0 20px rgba(232,93,4,.6)}}
+.chaos-icon{font-size:24px;}
+.chaos-title{font-size:13px;font-weight:700;color:var(--text);}
+.chaos-desc{font-size:11px;color:var(--muted);line-height:1.4;}
+.chaos-ripple{position:absolute;inset:0;background:rgba(232,93,4,.1);
+  opacity:0;animation:ripple .5s forwards;}
+@keyframes ripple{0%{opacity:1}100%{opacity:0;transform:scale(1.2)}}
+
+/* ── LOGS ─────────────────────────────────────────── */
+.log-wrap{background:#050505;border:1px solid #1a1a1a;border-radius:4px;
+  height:340px;overflow-y:auto;padding:10px;font-family:'Courier New',monospace;font-size:12px;}
+.log-line{padding:2px 0;border-bottom:1px solid #0f0f0f;line-height:1.5;word-break:break-all;}
+.log-line.panne{color:#e74c3c;}
+.log-line.recovery{color:#27ae60;}
+.log-line.action{color:#3498db;}
+.log-line.inject{color:#e85d04;}
+.log-line.default{color:#888;}
+.log-filters{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;}
+.lf{padding:4px 12px;background:var(--surface2);border:1px solid var(--border);
+  color:var(--muted);border-radius:3px;cursor:pointer;font-size:11px;font-weight:700;}
+.lf.active{background:var(--orange);border-color:var(--orange);color:#fff;}
+.log-count{font-size:11px;color:var(--muted);margin-left:auto;align-self:center;}
+
+/* ── CHART ────────────────────────────────────────── */
+#chartWrap{height:160px;position:relative;}
+
+/* ── INFRA PILLS ──────────────────────────────────── */
+.pills{display:flex;flex-wrap:wrap;gap:6px;}
+.pill{padding:4px 10px;background:var(--surface2);border:1px solid var(--border);
+  border-radius:3px;font-size:12px;color:var(--text);font-family:monospace;}
+.pill.danger{border-color:var(--red);color:var(--red);}
+
+/* ── TOAST ────────────────────────────────────────── */
+#toast{position:fixed;bottom:24px;right:24px;padding:12px 20px;border-radius:5px;
+  font-size:13px;font-weight:600;display:none;z-index:999;max-width:380px;
+  box-shadow:0 8px 24px rgba(0,0,0,.5);}
+#toast.s{background:var(--green);color:#fff;}
+#toast.e{background:var(--red);color:#fff;}
+#toast.w{background:var(--yellow);color:#000;}
+
+/* ── LOADING SPINNER ──────────────────────────────── */
+.spin{width:14px;height:14px;border:2px solid rgba(255,255,255,.2);
+  border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;display:inline-block;}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ── RESPONSIVE ───────────────────────────────────── */
+@media(max-width:700px){
+  .layout{grid-template-columns:1fr;}
+  .sidebar{display:none;}
+  .grid2,.grid3{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══════════════════════════════════════════════════════════════ -->
+<header>
+  <div class="logo">⚡ <span>Chaos</span>Control</div>
+  <div class="header-right">
+    <div class="conn-status ok" id="connStatus">
+      <div class="live-dot"></div>
+      <span id="connLabel">LocalStack connecté</span>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ LAYOUT ═══════════════════════════════════════════════════════════════ -->
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <div class="nav-section">
+      <div class="nav-label">Navigation</div>
+      <div class="nav-item active" onclick="showPanel('dashboard')">
+        <span class="icon">📊</span> Dashboard
+      </div>
+      <div class="nav-item" onclick="showPanel('instances')">
+        <span class="icon">🖥️</span> Instances EC2
+      </div>
+      <div class="nav-item" onclick="showPanel('chaos')">
+        <span class="icon">⚡</span> Injection Chaos
+      </div>
+      <div class="nav-item" onclick="showPanel('infra')">
+        <span class="icon">🌐</span> Infrastructure
+      </div>
+      <div class="nav-item" onclick="showPanel('logs')">
+        <span class="icon">📋</span> Logs Temps Réel
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- ══ DASHBOARD ══════════════════════════════════════════════════ -->
+    <div class="panel active" id="panel-dashboard">
+
+      <div class="grid3" style="margin-bottom:16px;">
+        <div class="stat">
+          <div class="stat-val" id="st-running">—</div>
+          <div class="stat-lbl">Running</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val" id="st-stopped">—</div>
+          <div class="stat-lbl">Stopped</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val" id="st-buckets">—</div>
+          <div class="stat-lbl">Buckets S3</div>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title">📈 Disponibilité</div>
+          </div>
+          <div class="card-body">
+            <div id="chartWrap"><canvas id="uptimeChart"></canvas></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title">🖥️ Instances EC2</div>
+            <button class="btn btn-chaos btn-xs" onclick="showPanel('instances')">Gérer →</button>
+          </div>
+          <div class="card-body" style="max-height:200px;overflow-y:auto;padding:0;">
+            <table>
+              <thead><tr><th>ID</th><th>Type</th><th>État</th></tr></thead>
+              <tbody id="dash-instances"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">📋 Derniers événements</div>
+        </div>
+        <div class="card-body" style="padding:10px;">
+          <div class="log-wrap" id="dash-logs" style="height:200px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ INSTANCES ══════════════════════════════════════════════════ -->
+    <div class="panel" id="panel-instances">
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">🖥️ Instances EC2 — Temps réel</div>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <span id="inst-updated" style="font-size:11px;color:var(--muted)"></span>
+            <button class="btn btn-chaos btn-xs" onclick="forceRefreshInstances()">↺ Refresh</button>
+          </div>
+        </div>
+        <div class="card-body" style="padding:0;">
+          <table>
+            <thead>
+              <tr>
+                <th>Instance ID</th>
+                <th>Type</th>
+                <th>État</th>
+                <th>Tag chaos</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="instances-body">
+              <tr><td colspan="5" style="text-align:center;padding:20px;color:var(--muted);">
+                <div class="spin" style="margin:auto;"></div>
+              </td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ CHAOS ══════════════════════════════════════════════════════ -->
+    <div class="panel" id="panel-chaos">
+      <div class="card" style="margin-bottom:16px;">
+        <div class="card-head">
+          <div class="card-title">⚡ Injection de Pannes</div>
+          <span style="font-size:11px;color:var(--muted);">Chaque bouton déclenche une vraie action sur LocalStack</span>
+        </div>
+        <div class="card-body">
+          <div class="chaos-grid" id="chaos-grid">
+            {% for failure in failures %}
+            <div class="chaos-card" id="chaos-{{ failure.id }}">
+              <div class="chaos-icon">{{ "💥" if "kill" in failure.id else ("🗑️" if "bucket" in failure.id else ("🌐" if "network" in failure.id else ("🔥" if "cpu" in failure.id else "☢️"))) }}</div>
+              <div class="chaos-title">{{ failure.description }}</div>
+              <div class="chaos-desc" id="chaos-desc-{{ failure.id }}">Prêt</div>
+              <button class="btn btn-chaos" onclick="injectChaos('{{ failure.id }}', this)">
+                ⚡ Déclencher
+              </button>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">📊 Résultats des injections</div>
+        </div>
+        <div class="card-body" style="padding:10px;">
+          <div class="log-wrap" id="chaos-log" style="height:220px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ INFRA ══════════════════════════════════════════════════════ -->
+    <div class="panel" id="panel-infra">
+      <div class="grid2">
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title">🌐 Subnets</div>
+            <span id="subnet-count" style="font-size:11px;color:var(--muted);">—</span>
+          </div>
+          <div class="card-body">
+            <div class="pills" id="subnets-pills"><span style="color:var(--muted);">Chargement…</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title">🪣 Buckets S3</div>
+            <span id="bucket-count" style="font-size:11px;color:var(--muted);">—</span>
+          </div>
+          <div class="card-body">
+            <div class="pills" id="buckets-pills"><span style="color:var(--muted);">Chargement…</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">🔒 VPCs & Security Groups</div>
+        </div>
+        <div class="card-body" id="network-details" style="padding:0;">
+          <table>
+            <thead><tr><th>VPC</th><th>CIDR</th></tr></thead>
+            <tbody id="vpc-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ LOGS ═══════════════════════════════════════════════════════ -->
+    <div class="panel" id="panel-logs">
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">📋 Logs — Temps Réel (SSE)</div>
+          <div style="display:flex;gap:6px;align-items:center;">
+            <span id="log-count" class="log-count">0 lignes</span>
+            <button class="btn btn-xs" onclick="clearLogView()"
+              style="background:var(--surface2);border:1px solid var(--border);color:var(--muted);">
+              🗑 Vider vue
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="log-filters">
+            <div class="lf active" onclick="setFilter('ALL',this)">TOUT</div>
+            <div class="lf" onclick="setFilter('PANNE',this)">💥 PANNES</div>
+            <div class="lf" onclick="setFilter('RECOVERY',this)">🔄 RÉCUP</div>
+            <div class="lf" onclick="setFilter('ACTION',this)">▶️ ACTIONS</div>
+            <div class="lf" onclick="setFilter('INJECT',this)">🎯 INJECT</div>
+            <div class="lf" onclick="setFilter('ERREUR',this)">❌ ERREURS</div>
+          </div>
+          <div class="log-wrap" id="main-logs"></div>
+        </div>
+      </div>
+    </div>
+
+  </main><!-- /main -->
+</div><!-- /layout -->
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script>
+// ═════════════════════════════════════════════════════════════════════════════
+//  STATE
+// ═════════════════════════════════════════════════════════════════════════════
+let allLogs   = [];
+let logFilter = 'ALL';
+let chart, uptimeData = new Array(20).fill(100);
+let instancesData = [];
+
+// ─── PANEL NAV ──────────────────────────────────────────────────────────────
+function showPanel(name) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('panel-' + name).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+// ─── TOAST ──────────────────────────────────────────────────────────────────
+function toast(msg, type = 's') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = type;
+  t.style.display = 'block';
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.style.display = 'none', 4500);
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+//  CHART
+// ═════════════════════════════════════════════════════════════════════════════
+function initChart() {
+  const ctx = document.getElementById('uptimeChart').getContext('2d');
+  chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: uptimeData.map(() => ''),
+      datasets: [{
+        label: 'Disponibilité %',
+        data: uptimeData,
+        borderColor: '#e85d04',
+        backgroundColor: 'rgba(232,93,4,0.08)',
+        fill: true, tension: 0.4,
+        pointRadius: 3, pointBackgroundColor: '#e85d04',
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, animation: { duration: 400 },
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { min: 0, max: 100, ticks: { color: '#555', font: { size: 10 } }, grid: { color: '#1a1a1a' } },
+        x: { display: false }
+      }
+    }
+  });
+}
+
+function pushUptime(val) {
+  uptimeData.shift();
+  uptimeData.push(Math.max(0, Math.min(100, val)));
+  chart.data.datasets[0].data = uptimeData;
+  chart.update('none');
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+//  INSTANCES SSE
+// ═════════════════════════════════════════════════════════════════════════════
+function startInstanceStream() {
+  const es = new EventSource('/api/instances/stream');
+  es.onmessage = (e) => {
+    try {
+      const data = JSON.parse(e.data);
+      if (data.error) { setConnStatus(false); return; }
+      setConnStatus(true);
+      instancesData = data;
+      renderInstances(data);
+      updateDashStats(data);
+    } catch {}
+  };
+  es.onerror = () => setConnStatus(false);
+}
+
+function setConnStatus(ok) {
+  const el = document.getElementById('connStatus');
+  const lb = document.getElementById('connLabel');
+  el.className = 'conn-status ' + (ok ? 'ok' : 'err');
+  lb.textContent = ok ? 'LocalStack connecté' : 'Connexion perdue…';
+}
+
+function stateBadge(state) {
+  if (state === 'running')    return `<span class="badge badge-green"><span class="dot dot-green"></span>${state}</span>`;
+  if (state === 'stopped')    return `<span class="badge badge-yellow"><span class="dot dot-yellow"></span>${state}</span>`;
+  if (state === 'terminated') return `<span class="badge badge-gray"><span class="dot dot-gray"></span>${state}</span>`;
+  if (state === 'stopping' || state === 'pending') return `<span class="badge badge-yellow"><span class="dot dot-yellow"></span>${state}</span>`;
+  return `<span class="badge badge-gray">${state}</span>`;
+}
+
+function renderInstances(instances) {
+  const tbody = document.getElementById('instances-body');
+  if (!instances.length) {
+    tbody.innerHTML = `<tr><td colspan="5" style="text-align:center;padding:20px;color:var(--muted);">Aucune instance trouvée</td></tr>`;
+    return;
+  }
+  tbody.innerHTML = instances.map(i => {
+    const isRunning  = i.state === 'running';
+    const isStopped  = i.state === 'stopped';
+    const isTerm     = i.state === 'terminated';
+    const chaosTag   = i.chaos ? `<span class="badge badge-orange">${i.chaos}</span>` : '<span style="color:var(--muted)">—</span>';
+    return `<tr>
+      <td class="mono">${i.id}</td>
+      <td><span style="color:var(--muted);">${i.type}</span></td>
+      <td>${stateBadge(i.state)}</td>
+      <td>${chaosTag}</td>
+      <td style="display:flex;gap:6px;flex-wrap:wrap;">
+        <button class="btn btn-start btn-xs"
+          ${!isStopped ? 'disabled' : ''}
+          onclick="instanceAction('${i.id}','start',this)">▶ Start</button>
+        <button class="btn btn-stop btn-xs"
+          ${!isRunning ? 'disabled' : ''}
+          onclick="instanceAction('${i.id}','stop',this)">⏹ Stop</button>
+        <button class="btn btn-terminate btn-xs"
+          ${isTerm ? 'disabled' : ''}
+          onclick="instanceAction('${i.id}','terminate',this)">✕ Terminate</button>
+      </td>
+    </tr>`;
+  }).join('');
+
+  // Dashboard mini-table
+  const dash = document.getElementById('dash-instances');
+  dash.innerHTML = instances.slice(0, 5).map(i =>
+    `<tr><td class="mono" style="font-size:11px;">${i.id}</td><td style="color:var(--muted);font-size:11px;">${i.type}</td><td>${stateBadge(i.state)}</td></tr>`
+  ).join('');
+
+  document.getElementById('inst-updated').textContent = 'mis à jour ' + new Date().toLocaleTimeString();
+}
+
+function updateDashStats(instances) {
+  const running  = instances.filter(i => i.state === 'running').length;
+  const stopped  = instances.filter(i => i.state === 'stopped').length;
+  document.getElementById('st-running').textContent = running;
+  document.getElementById('st-stopped').textContent = stopped;
+  // Uptime chart
+  const total = instances.filter(i => i.state !== 'terminated').length || 1;
+  pushUptime(Math.round((running / total) * 100));
+}
+
+async function instanceAction(id, action, btn) {
+  btn.disabled = true;
+  const orig = btn.textContent;
+  btn.innerHTML = '<span class="spin"></span>';
+  try {
+    const r = await fetch(`/api/instance/${id}/${action}`);
+    const d = await r.json();
+    toast(d.message || d.error, d.status === 'success' ? 's' : 'e');
+    if (d.status === 'success') {
+      forceRefreshInstances();
+      setTimeout(forceRefreshLogs, 800);
+    }
+  } catch (e) {
+    toast('Erreur réseau', 'e');
+  } finally {
+    btn.textContent = orig;
+    btn.disabled = false;
+  }
+}
+
+async function forceRefreshInstances() {
+  try {
+    const r = await fetch('/api/instances');
+    const d = await r.json();
+    if (d.instances) {
+      renderInstances(d.instances);
+      updateDashStats(d.instances);
+    }
+  } catch {}
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+//  CHAOS INJECTION
+// ═════════════════════════════════════════════════════════════════════════════
+async function injectChaos(failureId, btn) {
+  const card = document.getElementById('chaos-' + failureId);
+  const desc = document.getElementById('chaos-desc-' + failureId);
+  card.classList.add('injecting');
+  btn.classList.add('firing');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spin"></span> Injection…';
+  desc.textContent = '⚡ En cours…';
+
+  // Ripple
+  const rip = document.createElement('div');
+  rip.className = 'chaos-ripple';
+  card.appendChild(rip);
+  setTimeout(() => rip.remove(), 600);
+
+  try {
+    // Ajouter un timeout de 10 secondes
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
+
+    const r = await fetch(`/api/inject/${failureId}`, {
+      method: 'GET',
+      signal: controller.signal
+    });
+    
+    clearTimeout(timeoutId);
+
+    if (!r.ok) {
+      throw new Error(`Erreur HTTP ${r.status}`);
+    }
+
+    const d = await r.json();
+    const isOk = d.status === 'success';
+    const isWarn = d.status === 'warning';
+    toast(d.message, isOk ? 's' : isWarn ? 'w' : 'e');
+
+    desc.textContent = isOk ? '✅ ' + (d.instance_id || d.subnet_id || d.bucket || 'OK')
+                            : (isWarn ? '⚠️ ' + d.message : '❌ ' + d.message);
+
+    showRecoveryBanner(failureId);
+    fetch("/api/recover").catch(() => {}); // déclenche recovery immédiate côté serveur
+
+    const logDiv = document.getElementById('chaos-log');
+    const line = document.createElement('div');
+    line.className = 'log-line inject';
+    line.textContent = new Date().toLocaleTimeString() + ' — [' + failureId + '] ' + d.message;
+    logDiv.insertBefore(line, logDiv.firstChild);
+
+    setTimeout(forceRefreshInstances, 500);
+    setTimeout(forceRefreshInfra,     700);
+    setTimeout(forceRefreshLogs,      900);
+    setTimeout(forceRefreshInstances, 3500);
+    setTimeout(forceRefreshInfra,     3800);
+    setTimeout(forceRefreshLogs,      4000);
+    setTimeout(forceRefreshInstances, 6000);
+    setTimeout(forceRefreshInfra,     6200);
+    setTimeout(forceRefreshLogs,      6500);
+
+  } catch (e) {
+    console.error('Erreur:', e);
+    if (e.name === 'AbortError') {
+      desc.textContent = '❌ Timeout (>10s)';
+      toast('Injection timeout - vérifiez LocalStack', 'e');
+    } else {
+      desc.textContent = '❌ ' + e.message;
+      toast('Erreur réseau: ' + e.message, 'e');
+    }
+  } finally {
+    card.classList.remove('injecting');
+    btn.classList.remove('firing');
+    btn.disabled = false;
+    btn.innerHTML = '⚡ Déclencher';
+  }
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+//  INFRA SSE
+// ═════════════════════════════════════════════════════════════════════════════
+function startInfraStream() {
+  const es = new EventSource('/api/infra/stream');
+  es.onmessage = (e) => {
+    try {
+      const d = JSON.parse(e.data);
+      if (d.error) return;
+      renderInfra(d);
+    } catch {}
+  };
+}
+
+function renderInfra(data) {
+  // Subnets
+  const sp = document.getElementById('subnets-pills');
+  document.getElementById('subnet-count').textContent = data.subnets.length + ' subnet(s)';
+  if (data.subnets.length === 0) {
+    sp.innerHTML = '<span class="pill danger">⚠️ Aucun subnet — panne réseau active ?</span>';
+  } else {
+    sp.innerHTML = data.subnets.map(s =>
+      `<span class="pill">${s.id} <span style="color:var(--muted)">${s.cidr}</span></span>`
+    ).join('');
+  }
+  // Buckets
+  const bp = document.getElementById('buckets-pills');
+  document.getElementById('bucket-count').textContent = data.buckets.length + ' bucket(s)';
+  document.getElementById('st-buckets').textContent = data.buckets.length;
+  if (data.buckets.length === 0) {
+    bp.innerHTML = '<span class="pill danger">⚠️ Aucun bucket — supprimé ?</span>';
+  } else {
+    bp.innerHTML = data.buckets.map(b => `<span class="pill">🪣 ${b}</span>`).join('');
+  }
+}
+
+async function forceRefreshInfra() {
+  try {
+    const r = await fetch('/api/network');
+    const d = await r.json();
+    if (d.status !== 'success') return;
+    // VPCs
+    const vb = document.getElementById('vpc-body');
+    vb.innerHTML = d.vpcs.map(v => `<tr><td class="mono">${v.id}</td><td>${v.cidr}</td></tr>`).join('');
+  } catch {}
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+//  LOGS SSE
+// ═════════════════════════════════════════════════════════════════════════════
+function classifyLog(line) {
+  if (line.includes('💥')) return 'panne';
+  if (line.includes('🔄')) return 'recovery';
+  if (line.includes('▶️') || line.includes('⏹️')) return 'action';
+  if (line.includes('🎯') || line.includes('[INJECT]')) return 'inject';
+  if (line.includes('❌')) return 'panne';
+  return 'default';
+}
+
+function passFilter(line) {
+  if (logFilter === 'ALL')     return true;
+  if (logFilter === 'PANNE')   return line.includes('💥') || line.includes('❌');
+  if (logFilter === 'RECOVERY') return line.includes('🔄');
+  if (logFilter === 'ACTION')  return line.includes('▶️') || line.includes('⏹️');
+  if (logFilter === 'INJECT')  return line.includes('🎯') || line.includes('[INJECT]');
+  if (logFilter === 'ERREUR')  return line.includes('❌');
+  return true;
+}
+
+function appendLogLine(line, container) {
+  const cls  = classifyLog(line);
+  const div  = document.createElement('div');
+  div.className = 'log-line ' + cls;
+  div.textContent = line;
+  container.insertBefore(div, container.firstChild);
+  // Trim
+  while (container.children.length > 200) container.removeChild(container.lastChild);
+}
+
+function setFilter(f, el) {
+  logFilter = f;
+  document.querySelectorAll('.lf').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  rerenderMainLogs();
+}
+
+function rerenderMainLogs() {
+  const c = document.getElementById('main-logs');
+  c.innerHTML = '';
+  const filtered = allLogs.filter(l => passFilter(l));
+  // FIX : insertBefore pour garder le plus récent en haut (cohérent avec le stream)
+  filtered.forEach(l => {
+    const cls = classifyLog(l);
+    const div = document.createElement('div');
+    div.className = 'log-line ' + cls;
+    div.textContent = l;
+    c.insertBefore(div, c.firstChild);
+  });
+  document.getElementById('log-count').textContent = filtered.length + ' lignes';
+}
+
+function clearLogView() {
+  document.getElementById('main-logs').innerHTML = '';
+}
+
+function startLogStream() {
+  // 1) Charger les logs existants
+  fetch('/api/logs').then(r => r.json()).then(d => {
+    if (d.logs) {
+      allLogs = d.logs.reverse(); // plus récents en premier
+      rerenderMainLogs();
+      // Dashboard logs
+      const dl = document.getElementById('dash-logs');
+      dl.innerHTML = '';
+      d.logs.slice(0, 30).forEach(l => appendLogLine(l, dl));
+    }
+  });
+
+  // 2) SSE pour les nouvelles lignes
+  const es = new EventSource('/api/logs/stream');
+  es.onmessage = (e) => {
+    try {
+      const d    = JSON.parse(e.data);
+      const line = d.line;
+      if (!line) return;
+
+      // FIX : notifier la fin du recovery si le bandeau est actif
+      if (window._sseRecoveryFinish && line.includes('\uD83D\uDD04') &&
+          (line.includes('recovery') || line.includes('recr') || line.includes('red'))) {
+        const fn = window._sseRecoveryFinish;
+        window._sseRecoveryFinish = null;
+        fn();
+      }
+
+      allLogs.unshift(line);
+      if (allLogs.length > 500) allLogs.pop();
+
+      // Main log
+      if (passFilter(line)) {
+        const c = document.getElementById('main-logs');
+        appendLogLine(line, c);
+        document.getElementById('log-count').textContent =
+          document.getElementById('main-logs').children.length + ' lignes';
+      }
+
+      // Dashboard mini-log
+      appendLogLine(line, document.getElementById('dash-logs'));
+
+    } catch {}
+  };
+}
+
+
+// ═════════════════════════════════════════════════════════════════════════════
+//  RECOVERY BANNER
+// ═════════════════════════════════════════════════════════════════════════════
+function showRecoveryBanner(failureId) {
+  let banner = document.getElementById('recovery-banner');
+  if (!banner) {
+    banner = document.createElement('div');
+    banner.id = 'recovery-banner';
+    banner.style.cssText = [
+      'position:fixed','top:64px','left:50%','transform:translateX(-50%)',
+      'background:#1a2e1a','border:1px solid #27ae60','color:#27ae60',
+      'padding:10px 24px','border-radius:6px','font-size:13px','font-weight:700',
+      'z-index:200','display:flex','align-items:center','gap:10px',
+      'box-shadow:0 4px 20px rgba(39,174,96,0.3)'
+    ].join(';');
+    document.body.appendChild(banner);
+  }
+  let seconds = 0;
+  banner.innerHTML = '<span class="spin" style="border-top-color:#27ae60;border-color:rgba(39,174,96,.3)"></span>'
+                   + ' \uD83D\uDD04 Recovery en cours\u2026 <span id="rec-timer">0s</span>';
+  banner.style.display = 'flex';
+  clearInterval(banner._interval);
+  clearTimeout(banner._timeout);
+  banner._interval = setInterval(() => {
+    seconds++;
+    const t = document.getElementById('rec-timer');
+    if (t) t.textContent = seconds + 's';
+  }, 1000);
+  window._sseRecoverySeconds = function() { return seconds; };
+  window._sseRecoveryFinish = function() {
+    clearInterval(banner._interval);
+    clearTimeout(banner._autoclose);
+    banner.innerHTML = '\u2705 Recovery terminé en ' + seconds + 's';
+    banner._timeout = setTimeout(() => { banner.style.display = 'none'; }, 3000);
+  };
+  // Fermeture automatique après 8 s max (au lieu de tourner indéfiniment)
+  banner._autoclose = setTimeout(() => {
+    if (window._sseRecoveryFinish) {
+      const fn = window._sseRecoveryFinish;
+      window._sseRecoveryFinish = null;
+      fn();
+    }
+  }, 8000);
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+//  FORCE REFRESH LOGS (fallback si SSE lent ou cassé)
+// ═════════════════════════════════════════════════════════════════════════════
+async function forceRefreshLogs() {
+  try {
+    const r = await fetch('/api/logs');
+    const d = await r.json();
+    if (!d.logs) return;
+    // Mettre à jour allLogs avec les nouvelles lignes inconnues
+    const newLines = d.logs.reverse().filter(l => !allLogs.includes(l));
+    if (newLines.length === 0) return;
+    allLogs = [...newLines, ...allLogs].slice(0, 500);
+    rerenderMainLogs();
+    // Dashboard mini-log
+    const dl = document.getElementById('dash-logs');
+    dl.innerHTML = '';
+    allLogs.slice(0, 30).forEach(l => appendLogLine(l, dl));
+  } catch {}
+}
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  initChart();
+  startInstanceStream();
+  startInfraStream();
+  startLogStream();
+  forceRefreshInfra();
+});
+</script>
+</body>
+</html>
